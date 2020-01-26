@@ -126,51 +126,51 @@ jobs:
         ${{ each recipe in parameters.collectionsRecipes }}:
           ${{ if eq(parameters.splitByBuildTypes, 'true') }}:
             ${{ if contains(parameters.vsVersions, 14) }}:
-              ${{ recipe.name }}VS 2015 Release:
+              VS 2015 Release ${{ recipe.name }}:
                 AZP_BUILD_WORKER_IMAGE: vs2015-win2012r2
                 CONAN_VISUAL_VERSIONS: 14
                 CONAN_BUILD_TYPES: Release
                 CONAN_RECIPE_DIRECTORY: ${{ recipe.directory }}
-              ${{ recipe.name }}VS 2015 Debug:
+              VS 2015 Debug ${{ recipe.name }}:
                 AZP_BUILD_WORKER_IMAGE: vs2015-win2012r2
                 CONAN_VISUAL_VERSIONS: 14
                 CONAN_BUILD_TYPES: Debug
                 CONAN_RECIPE_DIRECTORY: ${{ recipe.directory }}
             ${{ if contains(parameters.vsVersions, 15) }}:
-              ${{ recipe.name }}VS 2017 Release:
+              VS 2017 Release ${{ recipe.name }}:
                 AZP_BUILD_WORKER_IMAGE: vs2017-win2016
                 CONAN_VISUAL_VERSIONS: 15
                 CONAN_BUILD_TYPES: Release
                 CONAN_RECIPE_DIRECTORY: ${{ recipe.directory }}
-              ${{ recipe.name }}VS 2017 Debug:
+              VS 2017 Debug ${{ recipe.name }}:
                 AZP_BUILD_WORKER_IMAGE: vs2017-win2016
                 CONAN_VISUAL_VERSIONS: 15
                 CONAN_BUILD_TYPES: Debug
                 CONAN_RECIPE_DIRECTORY: ${{ recipe.directory }}
             ${{ if contains(parameters.vsVersions, 16) }}:
-              ${{ recipe.name }}VS 2019 Release:
+              VS 2019 Release ${{ recipe.name }}:
                 AZP_BUILD_WORKER_IMAGE: windows-2019
                 CONAN_VISUAL_VERSIONS: 16
                 CONAN_BUILD_TYPES: Release
                 CONAN_RECIPE_DIRECTORY: ${{ recipe.directory }}
-              ${{ recipe.name }}VS 2019 Debug:
+              VS 2019 Debug ${{ recipe.name }}:
                 AZP_BUILD_WORKER_IMAGE: windows-2019
                 CONAN_VISUAL_VERSIONS: 16
                 CONAN_BUILD_TYPES: Debug
                 CONAN_RECIPE_DIRECTORY: ${{ recipe.directory }}
           ${{ if ne(parameters.splitByBuildTypes, 'true') }}:
             ${{ if contains(parameters.vsVersions, 14) }}:
-              ${{ recipe.name }}VS 2015:
+              VS 2015 ${{ recipe.name }}:
                 AZP_BUILD_WORKER_IMAGE: vs2015-win2012r2
                 CONAN_VISUAL_VERSIONS: 14
                 CONAN_RECIPE_DIRECTORY: ${{ recipe.directory }}
             ${{ if contains(parameters.vsVersions, 15) }}:
-              ${{ recipe.name }}VS 2017:
+              VS 2017 ${{ recipe.name }}:
                 AZP_BUILD_WORKER_IMAGE: vs2017-win2016
                 CONAN_VISUAL_VERSIONS: 15
                 CONAN_RECIPE_DIRECTORY: ${{ recipe.directory }}
             ${{ if contains(parameters.vsVersions, 16) }}:
-              ${{ recipe.name }}VS 2019:
+                VS 2019 ${{ recipe.name }}:
                 AZP_BUILD_WORKER_IMAGE: windows-2019
                 CONAN_VISUAL_VERSIONS: 16
                 CONAN_RECIPE_DIRECTORY: ${{ recipe.directory }}
