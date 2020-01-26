@@ -115,6 +115,7 @@ jobs:
           Start-Process -NoNewWindow cmd.exe '/c (del /f/s/q "C:\Program Files\Java" > nul) && (rmdir /S /Q "C:\Program Files\Java")'
           Start-Process -NoNewWindow cmd.exe '/c (del /f/s/q "C:\Program Files\dotnet\sdk\" > nul) && (rmdir /S /Q "C:\Program Files\dotnet\sdk\")' 
         }
+        cd $env:CONAN_RECIPE_DIRECTORY
         python build.py
       env:
         CONAN_LOGIN_USERNAME: ${{ parameters.conanLoginUsername }}

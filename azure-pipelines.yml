@@ -12,5 +12,7 @@ jobs:
     conanPassword: $(CONAN_PASSWORD)
     splitByBuildTypes: "true"
     collectionsRecipes: 
-      - name: ""
-        directory: "."     
+      - name: "libclang"
+        directory: "recipes/libclang" 
+      - name: "compiler-rt"
+        directory: "recipes/compiler-rt"
