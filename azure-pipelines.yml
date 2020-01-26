@@ -13,4 +13,4 @@ jobs:
     splitByBuildTypes: "true"
     collectionsRecipes: 
       - name: ""
-      - directory: "."     
+        directory: "."     

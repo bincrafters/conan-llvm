@@ -8,7 +8,7 @@ parameters:
   requireMoreDiskSpace: "false" # Possible values: "false", "true" - Deletes the entire Java stack for Windows images
   collectionsRecipes: 
     - name: ""
-    - directory: "."      
+      directory: "."
 
 jobs:
 - ${{ if ne(parameters.appleClangVersions, '') }}:
