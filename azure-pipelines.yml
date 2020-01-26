@@ -11,7 +11,9 @@ jobs:
     conanLoginUsername: $(CONAN_LOGIN_USERNAME)
     conanPassword: $(CONAN_PASSWORD)
     splitByBuildTypes: "true"
-    collectionsRecipes: 
+    collectionsRecipes:
+      - name: "llvm_headers"
+        directory: "recipes/llvm_headers"
       - name: "libclang"
         directory: "recipes/libclang" 
       - name: "compiler-rt"
