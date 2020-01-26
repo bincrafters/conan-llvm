@@ -6,7 +6,7 @@ parameters:
   appleClangVersions: ""  # Possible values: "10", "" (for no Apple Clang build jobs)
   splitByBuildTypes: "false"  # Possible values: "false", "true"
   requireMoreDiskSpace: "false" # Possible values: "false", "true" - Deletes the entire Java stack for Windows images
-  collectionsRecipes: 
+  collectionsRecipes:  # A list of recipes names (only for displaying them) and the directories pathes relative to the repository root
     - name: ""
       directory: "."
 
