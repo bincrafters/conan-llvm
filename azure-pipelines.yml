@@ -14,7 +14,7 @@ extends:
     conanUploadOnlyWhenStable: "false"
     # TODO: We still need a custom logic for uploading python_requires, extend bincrafters-package-tools or cpt?
     collectionsProvideAsPythonRequires:
-      path: 'recipes\llvm_common\'
+      path: 'recipes\llvm-common\'
       reference: 'llvm-common/0.0.0@Manu343726/testing'
     collectionsStages:
       - "G1"
