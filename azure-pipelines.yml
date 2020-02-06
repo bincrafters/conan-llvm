@@ -20,12 +20,12 @@ extends:
       - "G1"
       - "G2"
     collectionsRecipes:
-      - name: 'llvm_headers'
-        stage: 'G1'
-        type: 'header_only'
       - name: 'llvm'
         stage: 'G1'
         type: 'library'
+      - name: 'llvm_headers'
+        stage: 'G2'
+        type: 'header_only'
       - name: 'compiler-rt'
         stage: 'G2'
         type: 'library'
