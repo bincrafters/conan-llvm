@@ -27,8 +27,9 @@ class LLVMPackage(ConanFile):
     PARALLEL_BUILD = os.environ.get('CONAN_LLVM_SINGLE_THREAD_BUILD') is None
 
     version = os.environ.get("CONAN_VERSION_OVERRIDE", VERSION)
-    license = 'BSD'
-    url = 'https://gitlab.com/Manu343726/clang-conan-packages'
+    description = "DUMMY PLACEHOLDER" # FIXME: replace with component individual description somehow
+    license = 'BSD' # FIXME: LLVM uses Apache 2 with LLVM exception, but there is no SPDX identifier for this (yet)
+    url = 'https://github.com/bincrafters/conan-llvm'
     generators = 'cmake', 'cmake_paths', 'cmake_find_package'
     settings = 'os', 'compiler', 'build_type', 'arch'
     options = {
