@@ -13,5 +13,5 @@ class LLVMConan(llvm_common.LLVMComponentPackage):
     ]
 
     def requirements(self):
-        self.requires('gtest/1.8.1@bincrafters/stable', private=True)
+        self.requires('gtest/1.8.1', private=True)
         super().requirements()
