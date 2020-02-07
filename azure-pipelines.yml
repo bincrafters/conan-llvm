@@ -10,8 +10,9 @@ extends:
   parameters:
     conanLoginUsername: $(CONAN_LOGIN_USERNAME)
     conanPassword: $(CONAN_PASSWORD)
-    collectionsBasePath: "recipes"
     conanUploadOnlyWhenStable: "false"
+    jobsMaxParallel: 9
+    collectionsBasePath: "recipes"
     # TODO: We still need a custom logic for uploading python_requires, extend bincrafters-package-tools or cpt?
     collectionsProvideAsPythonRequires:
       path: 'recipes\llvm-common\'

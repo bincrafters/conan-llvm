@@ -8,6 +8,9 @@ parameters:
   - name: conanUploadOnlyWhenStable
     type: string
     default: "true"
+  - name: jobsMaxParallel
+    type: number
+    default: 10
   - name: pythonVersion
     type: string
     default: "3.7.6"
@@ -84,6 +87,7 @@ stages:
           displayName: Run
         
         strategy:
+          maxParallel: ${{ parameters.jobsMaxParallel }}
           matrix:
             ${{ if eq(parameters.splitByBuildTypes, 'true') }}:
               ${{ if contains(parameters.appleClangVersions, 10) }}:
@@ -178,6 +182,7 @@ stages:
             CONAN_UPLOAD_ONLY_WHEN_STABLE: ${{ parameters.conanUploadOnlyWhenStable }}
           displayName: Run
         strategy:
+          maxParallel: ${{ parameters.jobsMaxParallel }}
           matrix:
             ${{ each recipe in parameters.collectionsRecipes }}:
               ${{ if eq(recipe.stage, stage) }}:
