@@ -80,6 +80,10 @@ message(STATUS "Conan setup done. CMAKE_PROGRAM_PATH: ${{CMAKE_PROGRAM_PATH}}")
         cmake_options['CMAKE_VERBOSE_MAKEFILE'] = False
         cmake_options['BUILD_SHARED_LIBS'] = self._build_shared
 
+        # FIXME: LLVM seems to only support VS 2017+, raise an InvalidConfiguration Exception for VS < 2017
+        # https: // llvm.org/docs/GettingStartedVS.html
+
+        
         # FIXME TODO
         # Also, from the logs:
         # llvm/6.0.1@bincrafters/croydon: Building LLVM package 'llvm' as shared libs: False
