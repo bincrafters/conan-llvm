@@ -79,7 +79,17 @@ message(STATUS "Conan setup done. CMAKE_PROGRAM_PATH: ${{CMAKE_PROGRAM_PATH}}")
         cmake_options['CMAKE_INSTALL_PREFIX'] = self._install_dir
         cmake_options['CMAKE_VERBOSE_MAKEFILE'] = False
         cmake_options['BUILD_SHARED_LIBS'] = self._build_shared
-        cmake_options['LLVM_TARGETS_TO_BUILD'] = 'X86'
+
+        # FIXME TODO
+        # Also, from the logs:
+        # llvm/6.0.1@bincrafters/croydon: Building LLVM package 'llvm' as shared libs: False
+        # CMake Warning at CMakeLists.txt: 39 (message):
+        # Visual Studio generators use the x86 host compiler by default, even for
+        # 64-bit targets.  This can result in linker instability and out of memory
+        # errors.  To use the 64-bit host compiler, pass -Thost = x64 on the CMake
+        # command line.
+
+        cmake_options['LLVM_TARGETS_TO_BUILD'] = 'X86' # FIXME: This needs to be dynamic
 
         if hasattr(self, 'custom_cmake_options'):
             cmake_options.update(dict(self.custom_cmake_options))
